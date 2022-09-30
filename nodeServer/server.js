@@ -34,17 +34,11 @@ function random(min, max) {
 // Get request to fetch the image the json with url, label
 app.get('/api/image', async (req, res)=> {
     let randomNum1 = random(1, 10000);
-    let randomNum2 = random(1, 10000);
-    let randomNum3 = random(1, 10000);
-    let randomNum4 = random(1, 10000);
 
-    const image1 = await ImageNote.findOne({"ImageID":randomNum1.toString()})
-    const image2 = await ImageNote.findOne({"ImageID":randomNum2.toString()})
-    const image3 = await ImageNote.findOne({"ImageID":randomNum3.toString()})
-    const image4 = await ImageNote.findOne({"ImageID":randomNum4.toString()})
+    const image = await ImageNote.findOne({"ImageID":randomNum1.toString()})
 
     try {
-        res.json([image1, image2, image3, image4])
+        res.json(image)
     } catch (error) {
         res.status(500).send(error);
     }
