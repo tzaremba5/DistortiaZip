@@ -1,7 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import { useEffect, useState, Image} from 'react';
-import { clsx } from 'clsx';
+import { useEffect, useState} from 'react';
 
 import Label from './components/Label';
 import Logo from './components/Logo';
@@ -100,14 +98,14 @@ function App() {
     )
   }, [])
   return (
-    <div className="h-screen font-mono">
+    <div className="bg-gray-900 h-screen font-mono">
       <div className="flex justify-center mt-[30px]">
         <Logo/>
       </div>
       <div className="h-[100px]">
       </div>
       <div className="flex justify-center mb-20">
-        <img className={`transition delay-150 pointer-events-none mt-[20px] blur-[5px] h-[500px] w-[500px]`} src={detailsArr[correctChoice].OriginalURL} blurRadius={10}/>
+        <img className={`transition delay-150 rounded-xl pointer-events-none mt-[20px] blur-[5px] h-[500px] w-[500px]`} src={detailsArr[correctChoice].OriginalURL} blurRadius={10}/>
       </div>
       <div className="flex justify-center">
         <div className="flex justify-center">
@@ -131,7 +129,7 @@ function App() {
       <div className="flex justify-center pt-10">
         <Points score = {score}/>
         <Scoreboard percent = {'5'}/>
-        <MaxScore/>
+        <MaxScore worldRecord={worldRecord}/>
       </div>
       <div>
       </div>

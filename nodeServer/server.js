@@ -14,7 +14,7 @@ mongoose.connect("mongodb+srv://tzaremba5:Bsd500020@serverlessinstance0.ref0p.mo
 const db = mongoose.connection;
 db.on("error", (err)=>{console.log("error connect")});
 
-
+// Creates the Server
 const app = express()
 app.use(express.json())
 
@@ -44,13 +44,6 @@ app.get('/api/image', async (req, res)=> {
     }
 })
 
-
-// Post request to post the record
-app.post('/upload', (req, res)=> {
-    res.json({"teddy":"t"})
-    console.log(req.body)
-    console.log('')
-})
 
 
 app.listen(3080, (req, res)=>{console.log("Listening on port 3080")});
